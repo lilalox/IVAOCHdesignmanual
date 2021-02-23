@@ -1,0 +1,434 @@
+/* Define color variables */
+
+:root {
+    --light-color: white;
+    --cards-color: #eee;
+    --accent-color: #d61f28;
+    --medium-color: #aaa;
+    --dark-color: #3a3a3a;
+}
+
+/* Local import Helvetica Neue LT Thin & Medium */
+
+@font-face {
+    font-family: 'Helvetica Neue LT';
+    src: url(./resources/fonts/Helvetica\ Neue\ LT\ 35\ Thin.ttf) format('truetype');
+    font-weight: 35;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue LT';
+    src: url(./resources/fonts/Helvetica\ Neue\ LT\ 65\ Medium.ttf) format('truetype');
+    font-weight: 65;
+    font-style: normal;
+}
+
+/* Import Open Sans regular and bold */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+/* Universal styles */
+
+html {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: regular;
+    font-size: 16px;
+    hyphens: auto;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    margin-bottom: 0.25em;
+    margin-top: 0.75em;
+}
+
+h1, h2, h3 {
+    font-family: 'Helvetica Neue LT';
+    color: white;
+    background-color: var(--accent-color);
+    padding: 0.1em 0.2em;
+    border-radius: 0.1em;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 65;
+    margin: 10px 0 0 0;
+}
+
+h2 {
+    font-weight: 45;
+    margin: 5px 0 10px 0;
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 65;
+    display: inline-block;
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+h5 {
+    font-size: 1.12rem;
+}
+
+h6 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Nav bar */
+
+nav {
+    position: fixed;
+    width: 100%;
+    height: 4rem;
+    background-color: rgba(0,0,0,0.65);
+    z-index: 2;
+}
+
+nav img {
+    width: 70px;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul li a {
+    color: var(--light-color);
+    text-decoration: none;
+    padding: 20px;
+    text-transform: uppercase;
+}
+
+nav ul li a:hover {
+    font-weight: bold;
+    background-color: var(--accent-color);
+}
+
+/* Header */
+
+header {
+    background: url(resources/images/trianglesbackground.png) no-repeat center center; 
+    background-size: cover;
+    height: 220px;
+    background-attachment: fixed;
+}
+
+header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    height: inherit;
+    background-color: var(--dark-color);
+    mix-blend-mode: multiply;
+    opacity: 0.3;
+}
+
+header .container {
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+header .title {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: flex-start;
+    margin-left: 20px;
+}
+
+header img {
+    width: 200px;
+    margin-right: 20px;
+}
+
+
+/* Content */
+
+main {
+    padding: 20px;
+}
+
+p.description {
+    padding: 5px 10px 0 0;
+    line-height: 1.4;
+}
+
+button {
+    margin: 5px auto;
+    padding: 7px 10px;
+    background-color: var(--medium-color);
+    color: var(--light-color);
+    border-radius: 3px;
+}
+
+button:hover {
+    background-color: var(--dark-color);
+}
+
+button:active {
+    background-color: var(--accent-color);
+}
+
+/* Colors */
+
+#colors .maincontainer {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#colors .container {
+    width: inherit;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+}
+
+.color {
+    width: 350px;
+    background-color: var(--cards-color);
+    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.color .square {
+    min-height: 120px;
+    min-width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+}
+
+.color #red {
+    background-color: #d61f28;
+    color: var(--light-color);
+}
+
+.color #darkgrey {
+    background-color: #3a3a3a;
+    color: var(--light-color);
+}
+
+.color #white {
+    background-color: #fff;
+}
+
+.color #darkblue {
+    background-color: #2a4982;
+    color: var(--light-color);
+}
+
+.color #mediumgrey {
+    background-color: #aaa;
+}
+
+.color #lightgrey {
+    background-color: #eee;
+    border: 1px solid var(--medium-color);
+}
+
+/* Fonts */
+
+#fonts .container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.font {
+    width: 350px;
+    background-color: var(--cards-color);
+    margin: 10px;
+    display: flex;
+    flex-flow: column wrap;
+    padding: 10px;
+}
+
+.font .demo {
+    background-color: var(--light-color);
+    padding: 10px;
+    min-height: 100px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.font .demo h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    display: flex;
+    flex-flow: column;
+    margin: 0 0 10px 0;
+}
+
+.font .regular {
+    font-weight: normal;
+}
+
+.font .thin {
+    font-weight: 35;
+}
+
+.font .medium {
+    font-weight: 65;
+}
+
+.font .bold {
+    font-weight: bold;
+}
+
+.font .expanded {
+    letter-spacing: 2px;
+}
+
+.font #OpenSans {
+    font-family: 'Open Sans';
+}
+
+.font #Arial {
+    font-family: Arial;
+}
+
+.font #Helvetica {
+    font-family: 'Helvetica Neue LT';
+    font-weight: 35;
+}
+
+/* Logos */
+
+#logos .container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+}
+
+.logo {
+    width: 350px;
+    background-color: var(--cards-color);
+    margin: 10px;
+    display: flex;
+    flex-flow: column wrap;
+    padding: 10px;
+}
+
+.logo img {
+    max-width: 300px;
+    max-height: 120px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.logo .darkbackground {
+    background-color: var(--dark-color)
+}
+
+.logo .lightbackground {
+    background-color: var(--light-color);
+}
+
+/* Formats */
+
+#formats .container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+}
+
+.format {
+    width: 350px;
+    background-color: var(--cards-color);
+    margin: 10px;
+    padding: 10px;
+}
+
+.format .imgcontainer {
+    position: relative;
+    display: inline-block;
+}
+
+.format .overlay {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.format .overlay:hover {
+    transition: ease 0.5s;
+    opacity: 1;
+    background-color: rgba(58, 58, 58, 0.5);
+}
+
+.format .overlay .data {
+    color: var(--light-color);
+    margin: auto;
+    display: inline-block;
+    font-size: 1.25rem;
+}
+
+.format .square {
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.format img {
+    display: inline-block;
+    border: 1px solid var(--medium-color);
+    background-color: var(--light-color);
+    max-width: 100%;
+}
+
+.format .data {
+    position: absolute
+}
+
+/* Footer */
+
+footer {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+footer p {
+    padding: 10px;
+}
