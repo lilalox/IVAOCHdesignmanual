@@ -8,6 +8,10 @@
     --dark-color: #3a3a3a;
 }
 
+:root {
+    --gap: 10px;
+}
+
 /* Local import Helvetica Neue LT Thin & Medium */
 
 @font-face {
@@ -34,7 +38,6 @@ html {
     font-family: 'Open Sans', sans-serif;
     font-weight: regular;
     font-size: 16px;
-    hyphens: auto;
 }
 
 * {
@@ -72,7 +75,8 @@ h2 {
 h3 {
     font-size: 1.5rem;
     font-weight: 65;
-    display: inline-block;
+    padding: 0.4rem 0.6rem 0.2rem 0.6rem;
+    margin: 2rem 0 1rem;
 }
 
 h4 {
@@ -86,6 +90,48 @@ h5 {
 h6 {
     font-size: 1rem;
     margin-bottom: 0.5rem;
+}
+
+main {
+    padding: 0 20px;
+}
+
+p.description {
+    padding: 5px 10px 0 0;
+    line-height: 1.4;
+    hyphens: auto;
+}
+
+button {
+    margin: 5px auto;
+    padding: 7px 10px;
+    background-color: var(--medium-color);
+    color: var(--light-color);
+    border-radius: 3px;
+}
+
+button:hover {
+    background-color: var(--dark-color);
+}
+
+button:active {
+    background-color: var(--accent-color);
+}
+
+main a, main a:link, main a:visited {
+    color: var(--accent-color);
+}
+
+main a:active {
+    color: var(--medium-color);
+}
+
+.card {
+    width: 350px;
+    background-color: var(--cards-color);
+    display: flex;
+    margin: var(--gap) var(--gap) 0 0;
+    padding: 10px;
 }
 
 /* Nav bar */
@@ -114,14 +160,14 @@ nav ul {
     justify-content: flex-end;
 }
 
-nav ul li a {
+nav ul>li>a {
     color: var(--light-color);
     text-decoration: none;
     padding: 20px;
     text-transform: uppercase;
 }
 
-nav ul li a:hover {
+nav ul>li>a:hover {
     font-weight: bold;
     background-color: var(--accent-color);
 }
@@ -169,34 +215,6 @@ header img {
     margin-right: 20px;
 }
 
-
-/* Content */
-
-main {
-    padding: 20px;
-}
-
-p.description {
-    padding: 5px 10px 0 0;
-    line-height: 1.4;
-}
-
-button {
-    margin: 5px auto;
-    padding: 7px 10px;
-    background-color: var(--medium-color);
-    color: var(--light-color);
-    border-radius: 3px;
-}
-
-button:hover {
-    background-color: var(--dark-color);
-}
-
-button:active {
-    background-color: var(--accent-color);
-}
-
 /* Colors */
 
 #colors .maincontainer {
@@ -205,17 +223,12 @@ button:active {
 }
 
 #colors .container {
-    width: inherit;
     display: flex;
     flex-flow: column wrap;
     justify-content: flex-start;
 }
 
 .color {
-    width: 350px;
-    background-color: var(--cards-color);
-    margin: 10px;
-    display: flex;
     align-items: center;
 }
 
@@ -228,7 +241,7 @@ button:active {
     justify-content: center;
     text-align: center;
     padding: 5px;
-    margin: 10px;
+    margin: 0 10px 0 0;
 }
 
 .color #red {
@@ -259,6 +272,14 @@ button:active {
     border: 1px solid var(--medium-color);
 }
 
+.color h6 {
+    margin-top: 0px;
+}
+
+.color .colorcode {
+    font-family: Consolas, 'Courier New', monospace;
+}
+
 /* Fonts */
 
 #fonts .container {
@@ -267,12 +288,7 @@ button:active {
 }
 
 .font {
-    width: 350px;
-    background-color: var(--cards-color);
-    margin: 10px;
-    display: flex;
     flex-flow: column wrap;
-    padding: 10px;
 }
 
 .font .demo {
@@ -334,12 +350,7 @@ button:active {
 }
 
 .logo {
-    width: 350px;
-    background-color: var(--cards-color);
-    margin: 10px;
-    display: flex;
     flex-flow: column wrap;
-    padding: 10px;
 }
 
 .logo img {
@@ -366,10 +377,8 @@ button:active {
 }
 
 .format {
-    width: 350px;
-    background-color: var(--cards-color);
-    margin: 10px;
-    padding: 10px;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .format .imgcontainer {
@@ -402,17 +411,16 @@ button:active {
     font-size: 1.25rem;
 }
 
-.format .square {
-    position: relative;
-    display: inline-block;
-    margin: 0 auto;
-}
-
 .format img {
     display: inline-block;
     border: 1px solid var(--medium-color);
     background-color: var(--light-color);
     max-width: 100%;
+    max-height: 200px;
+}
+
+.format h4 {
+    margin-top: 0px;
 }
 
 .format .data {
@@ -427,6 +435,7 @@ footer {
     min-height: 100px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 footer p {
