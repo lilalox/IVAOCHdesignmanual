@@ -38,6 +38,8 @@ html {
     font-family: 'Open Sans', sans-serif;
     font-weight: regular;
     font-size: 16px;
+    min-width: 340px;
+    max-width: 100%;
 }
 
 * {
@@ -127,10 +129,10 @@ main a:active {
 }
 
 .card {
-    width: 350px;
+    width: 100%;
     background-color: var(--cards-color);
     display: flex;
-    margin: var(--gap) var(--gap) 0 0;
+    margin: var(--gap) 0 0 0;
     padding: 10px;
 }
 
@@ -460,5 +462,11 @@ footer p {
 
     header .container {
         top: 100px;
+    }
+
+    .card {
+        margin: var(--gap) var(--gap) 0 0;
+        min-width: 0;
+        width: 350px;
     }
 }
